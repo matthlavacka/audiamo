@@ -1,0 +1,15 @@
+<template name="collection">
+	<div class="container break-el">
+		<h2 class="text-center">Admin Database</h2>
+		{{#each showInput}}
+			{{#unless this.isUploaded}}
+	  			{{> FS.UploadProgressBar bootstrap=true}}
+			{{/unless}}
+			<li class="list-group-item">
+				<p><b>Author:</b> {{metadata.email}}</p>
+				<p><b>Title:</b> {{metadata.title}}</p>
+	   			<a href="{{this.url download=true}}"><b>Download:</b> {{this.name}}</a>
+	   		</li>
+	    {{/each}}
+	</div>
+</template>

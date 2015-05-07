@@ -1,0 +1,30 @@
+<template name="summarize">
+	<div class="container-fluid green-bottom-border">
+			<div class="navbar text-left">
+				<a id="page-name" href="/"><h4 class="black">Audiamo</h4></a>
+			</div>
+		</div>
+	<div class="gray-back">	
+	<div id="summarize" class="container-fluid gray-back text-center">
+		<h2 class="gray-back mini-marg upper">Creating an audiobook</h2>
+		<div class="marg-book">
+			{{> book}}
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="book">
+	<div class="break-el">
+		<li id="list-conditions" class="list-group-item">
+	        <h4 id="title"><strong>{{metadata.title}}</strong></h4> 
+	    </li>   
+	</div>
+	<div class="break-el">
+		<li id="list-conditions" class="list-group-item text-left">
+			<p>We will convert text from <strong>{{this.name}}</strong> into an audiobook using our Text-to-speech technology.</p>
+			<p>You'll receive a $10 payment request for each 300 pages converted to <strong>{{metadata.email}}</strong>. After payment validation you'll receive an email in 24 hours with audiobook in MP3 format attached.</p>
+		</li>
+	</div>
+		<a href="{{pathFor 'frontPage'}}"><button id="btn-agree" class="btn btn-speak">Create My Audiobook</button></a>
+</template>

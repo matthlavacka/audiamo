@@ -1,0 +1,44 @@
+<template name="speak">
+	<li id="speech-box" class="gray-back list-group-item gray-top-border left-center">
+		<div class="container gray-back">
+		<div class="row gray-back">
+			<div class="col-md-6 gray-back">
+				<h2 class="gray-back">Try Audiamo with text from your book</h2>
+		  		<p class="gray-back" id="guide">Enter or paste English text to be synthesized into speech.</p>
+		  	</div>
+  			<div class="col-md-6 gray-back">
+  				{{#if support}}
+  				<textarea rows="10" class="break-el" name="inputfield" id="inputfield">{{value}}</textarea>
+		  		<button class="btn btn-speak pull-left" id="listen">Speak</button>
+		  		<button class="btn btn-stop hidden" id="stop">Stop</button>
+		  		<p id="counter" class="pull-right btn gray-back">{{counter}} Characters</p>
+		  		{{else}}
+		  		<p class="top-marg gray-back">We're sorry, but your browser <strong>does not</strong> support Text To Speech synthesis technology. Try Audiamo with your text in <a href="http://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a> or <a href="https://www.apple.com/safari/">Safari</a>.</p>
+		  		<p>To try Audiamo, you can play the following audio we generated for you.</p>
+		  		<div class="">
+			  		<audio controls>
+					  <!--<source src="horse.ogg" type="audio/ogg">-->
+					  <source src="what-technology-wants.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+					</audio>
+				</div>
+		  		{{/if}}
+  			</div>
+  		</div>
+		  
+		  <!--<p class="back-color" id="description">The text language must match the selected voice language: Mixing language (English text with a Spanish voice) does not produce valid results.</p>
+		  <label id="language-label" class="back-color" for="language">Select language:</label>
+		  <select id="language" name="language" class="form-control">
+		  	<option value="en">English</option>
+		  	<option value="de">German</option>
+		  	<option value="es">Spanish</option>
+		  </select>-->
+		  <!--
+		  <button class="btn btn-stop hidden" id="stop">Stop</button>
+		  <button class="btn btn-default hidden" id="pause">Pause</button>
+		  <button class="btn btn-default hidden" id="resume">Resume</button>
+		  <button class="btn btn-default pull-left">Download</button>-->
+		</div>
+	</li>
+	
+</template>
